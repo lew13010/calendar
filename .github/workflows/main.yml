@@ -86,7 +86,7 @@ jobs:
             ## —— Static analysis ✨ —————————————————————————————————————————————————
             - name: Static analysis of PHP code (PHPStan)
               run: make static-analysis
-              if: matrix.php-versions == '8.0'
+              if: matrix.php-versions == '7.4'
 
             ## —— Tests ✅ ———————————————————————————————————————————————————————————
             - name: Load Doctrine fixtures
