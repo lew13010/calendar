@@ -12,6 +12,17 @@ services:
             # See https://docs.docker.com/compose/compose-file/#ports for more information.
             - '3306:3306'
 
+    www:
+        build: ./.docker/php
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www/
+        networks:
+            - calendar-www
+
     mailcatcher:
         image: 'schickling/mailcatcher'
         ports: [1025, 1080]
+
+networks:
+    calendar-www:
